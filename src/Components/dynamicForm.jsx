@@ -92,7 +92,9 @@ const DynamicForm = () => {
               <Form.Item
                 name={`${q.fieldName}-${pet}`}
                 label={q.question}
-                rules={[{ required: true }]}
+                rules={[
+                  { required: true, message: `${q.fieldName} is required` },
+                ]}
               >
                 <Input />
               </Form.Item>
@@ -109,7 +111,7 @@ const DynamicForm = () => {
     let obj = {};
     obj.pet = selectedPet;
     obj.questions = [];
-
+    obj.appointmentNotes = values.appointmentNotes;
     selectedPet.map((petId) =>
       formData[petId]?.questions.map((q) => {
         let temp = {};
@@ -148,6 +150,9 @@ const DynamicForm = () => {
         </Select>
       </Form.Item>
       {questionFields}
+      <Form.Item name="appointmentNotes" label="Additional Notes">
+        <Input.TextArea />
+      </Form.Item>
       <Form.Item {...tailLayout}>
         <Button type="primary" htmlType="submit">
           Submit
