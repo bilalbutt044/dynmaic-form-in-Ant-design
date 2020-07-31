@@ -6,3 +6,35 @@
 .heading {
   text-align: center;
 }
+.card {
+  widows: 300px;
+  max-width: 300px;
+  margin-top: 10px;
+}
+.card-tick-icon {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  height: 42;
+}
+
+.card-tick-icon-checked {
+  height: 42px;
+  width: 42px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  padding: 5px 0;
+}
+.card-tick-icon-checked .fa-check {
+  color: white !important;
+  font-size: 30px;
+}
+.card-tick-icon-unchecked {
+  height: 42px;
+  width: 42px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
